@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+//some header
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Info</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item:${apartments}">
+        <th th:text="${item.getId()}"></th>
+        <th th:text="${item.getTitle()}"></th>
+        <th th:text="${item.getRoomsAmount()}"></th>
+        <th th:text="${item.getPrice()}"></th>
+        <th><a th:href="'/apartments/'+${item.getId()}+'/info'" class="btn btn-outline-primary">Info</a></th>
+        <th><a th:href="'/apartments/'+${item.getId()}+'/edit'" class="btn btn-outline-secondary">Edit</a></th>
+        <th><a th:href="@{/{id}/delete(id=${item.getId()})}" class="btn btn-outline-danger">Delete</a></th>
+    </tr>
+    </tbody>
+</table>
+
+//some footer
+</body>
+</html>
