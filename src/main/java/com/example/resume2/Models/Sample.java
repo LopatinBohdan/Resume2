@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Template {
+public class Sample {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -29,7 +29,7 @@ public class Template {
             joinColumns = {@JoinColumn(name = "template_id")},
             inverseJoinColumns = {@JoinColumn(name = "template_part_id")}
     )
-    private List<TemplatePart> template_parts;
+    private List<SamplePart> template_parts;
 
     @OneToMany(mappedBy = "template")
     private List<Resume> resumes;

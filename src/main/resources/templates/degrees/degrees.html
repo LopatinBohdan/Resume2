@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Degree page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
 <body>
 
-//some header
-
+<!--some header-->
+<a href="/degrees/addDegree" class="btn btn-outline-success">Add Degree</a>
 <table class="table">
     <thead>
     <tr>
@@ -19,18 +20,17 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="item:${apartments}">
+    <tr th:each="item:${degrees}">
         <th th:text="${item.getId()}"></th>
         <th th:text="${item.getTitle()}"></th>
-        <th th:text="${item.getRoomsAmount()}"></th>
-        <th th:text="${item.getPrice()}"></th>
-        <th><a th:href="'/apartments/'+${item.getId()}+'/info'" class="btn btn-outline-primary">Info</a></th>
-        <th><a th:href="'/apartments/'+${item.getId()}+'/edit'" class="btn btn-outline-secondary">Edit</a></th>
-        <th><a th:href="@{/{id}/delete(id=${item.getId()})}" class="btn btn-outline-danger">Delete</a></th>
+
+        <th><a th:href="'/degrees/'+${item.getId()}+'/infoDegree'" class="btn btn-outline-primary">Info</a></th>
+        <th><a th:href="@{/{id}/addDegree(id=${item.getId()})}" class="btn btn-outline-secondary">Edit</a></th>
+        <th><a th:href="@{/{id}/deleteDegree(id=${item.getId()})}" class="btn btn-outline-danger">Delete</a></th>
     </tr>
     </tbody>
 </table>
 
-//some footer
+<!--some footer-->
 </body>
 </html>

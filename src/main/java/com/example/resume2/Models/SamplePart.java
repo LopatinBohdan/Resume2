@@ -13,13 +13,13 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class TemplatePart {
+public class SamplePart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private int step_number;
     @ManyToMany(mappedBy = "template_parts")
-    private List<Template> templates;
+    private List<Sample> samples;
 
 }
